@@ -1,0 +1,30 @@
+<!-- user not logged in -->
+<div ng-if="!isAuthenticated()">
+	<p class="text-center">You need to login first</p>
+</div>
+
+<!-- user logged in -->
+<div ng-if="isAuthenticated()">
+
+	<div class="col-md-4">
+		<form method="post" ng-submit="addStripeCardToUser()" name="addCardForm" class="">
+		    <input ng-model="user.creditcard.number" class="form-control text-center" placeholder="Card Number" />
+		    <input ng-model="user.creditcard.month" class="form-control text-center" placeholder="Expiration" />
+		    <input ng-model="user.creditcard.year" class="form-control text-center" placeholder="Year" />
+		    <input ng-model="user.creditcard.cvc" class="form-control text-center" placeholder="CVC" />
+		    <button type="submit" class="btn btn-primary center-block">Submit</button>
+		</form>
+	</div>
+
+	<div class="col-md-4">
+		<button type="submit" class="btn btn-primary center-block" ng-click="chargeStripeCardOfUser()">Charge</button>
+	</div>
+
+<!-- 	<div class="col-md-4">
+		<form method="post" ng-submit="getStripeToken()" name="addCardForm" class="">
+		    <input ng-model="user.tokenID" class="form-control text-center" placeholder="TokenID" />
+		    <button type="submit" class="btn btn-primary center-block">Submit</button>
+		</form>
+	</div> -->
+</div>
+
