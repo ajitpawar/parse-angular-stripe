@@ -4,7 +4,7 @@
   },
   "applications": {
     "_default": {
-      "link": "parse-angular-stripe"
+      "link": "###"
     },
     "parse-angular-stripe": {
       "applicationId": "###",
